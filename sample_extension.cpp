@@ -48,8 +48,8 @@ void wrappedRandomArray(Dart_Port dest_port_id,
 		Dart_CObject result;
 		result.type = Dart_CObject_kString;
 		result.value.as_string = new char[10];
-		result.value.as_string[0] = 0x4D; // 'M'; //
-		result.value.as_string[1] = 0xEA; // 'ê';
+		result.value.as_string[0] = 0x4D; // 'M'; // 
+		result.value.as_string[1] = 0xEA; // 'ê'; // invalid Utf-8 char (this is ANSI!)
 		result.value.as_string[2] = 0x73; // 's';
 		result.value.as_string[3] = '\0';
 		Dart_PostCObject(reply_port_id, &result);

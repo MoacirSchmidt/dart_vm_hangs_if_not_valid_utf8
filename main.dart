@@ -17,7 +17,7 @@ class RandomArray {
     args[0] = replyPort.sendPort;
     _servicePort.send(args);
     replyPort.handler = (result) {
-      replyPort.close();
+      replyPort.close(); // <- This is never reached!!!!
       if (result != null) {
         completer.complete(result);
       } else {
